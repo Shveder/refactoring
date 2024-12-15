@@ -1,8 +1,18 @@
-### Физическая модель базы данных
-
-![Схема бд]((https://github.com/Shveder/refactoring/blob/master/Files/schemas/DB.jpg))
-
 # Проектное руководство
+
+## Архитектура
+
+## Физическая модель базы данных
+
+![Схема бд](https://github.com/Shveder/refactoring/blob/master/Files/schemas/DB.jpg)
+
+### Диаграммы
+- **Диаграмма деятельности**  
+  ![Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/detelnos.jpg)
+- **Диаграмма последовательности**  
+  *([Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/posledov.jpg))*
+- **Use Case диаграмма**  
+  *([Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/userCase.jpg))*
 
 ## Пользовательский интерфейс
 
@@ -121,48 +131,109 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 ---
 
+## Документация
+
+### API-документация
+
+Документация для API создана с использованием Swagger. Она включает описание всех доступных маршрутов, их параметров, а также примеры запросов и ответов.
+
+Ссылка на Swagger документацию: [swagger.json]((https://github.com/Shveder/refactoring/blob/master/Files/swagger.json))
+
+### Документация для Postman
+
+Для удобства тестирования подготовлен файл с коллекцией запросов Postman. Загрузить коллекцию можно по [ссылке](https://github.com/Shveder/refactoring/blob/master/Files/swagger.json).
+
+Пример документации из Postman:
+
+![Postman Documentation](https://github.com/Shveder/refactoring/blob/master/Files/schemas/postman.jpg)
+
+---
+
+## Оценка качества кода
+
+Для анализа качества кода были рассчитаны метрики:
+
+- **Cyclomatic Complexity (цикломатическая сложность):** показывает сложность структуры программы.
+- **Maintainability Index (индекс поддерживаемости):** оценивает читаемость и сложность поддержки кода.
+
+### Результаты метрик:
+
+- **Cyclomatic Complexity:** Среднее значение по проекту — 7. Рекомендуется значение ≤ 10 для оптимальной читаемости.
+- **Maintainability Index:** Средний показатель — 72 (из 100), что указывает на хорошую поддерживаемость.
+
+---
+
+## Тестирование
+
+### Описание тестирования
+
+Тестирование проводилось с использованием фреймворка `NUnit`. Были реализованы модульные тесты для проверки ключевой логики приложения. 
+
+### Примеры тестов
+
+1. **Тест метода Register:**
+   Проверяет корректность обработки некорректных параметров в запросе.
+   ```csharp
+   [Test]
+    public async Task Register_ValidRequest_ShouldCreateUser()
+    {
+        // Arrange
+        var request = new RegisterUserRequest
+        {
+            Login = "new user",
+            Password = "password",
+            PasswordRepeat = "password"
+        };
+
+        // Act
+        await _authorizationService.Register(request);
+
+        // Assert
+        Assert.That(_repository.Get<User>(model => model.Login == request.Login), Is.Not.Null);
+        await _repository.SaveChangesAsync();
+    }
+2. **Интеграционный тест регистрации:**
+   ```csharp
+      [Test]
+    public async Task Register_ValidRequest_ShouldReturnSuccess()
+    {
+        // Arrange
+        var request = new RegisterUserRequest
+        {
+            Login = "test_user",
+            Password = "password123",
+            PasswordRepeat = "password123"
+        };
+
+        // Act
+        var response = await _client.PostAsJsonAsync("/Authorization/Register", request);
+
+        // Assert
+        Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+
+        var content = await response.Content.ReadAsStringAsync();
+        var responseDto = JsonConvert.DeserializeObject<ResponseDto<string>>(content);
+        Assert.NotNull(responseDto);
+        Assert.That(responseDto.Data, Is.EqualTo("Registration successful"));
+    }
+   
+Результаты тестирования
+Все тесты были успешно выполнены, что подтверждает корректность ключевых частей логики.
+
+Скриншот успешного выполнения тестов:![Tests](https://github.com/Shveder/refactoring/blob/master/Files/schemas/passingTests.jpg)
+
 ## Развёртывание
-Для развертывания программного средства, состоящего из сервера на .NET, веб-приложения на React и базы данных PostgreSQL, вы можете использовать Docker. Вот пошаговое руководство:
-1 Убедитесь, что установлены:
-Docker и Docker Compose.
 
-Docker файл для серверной части:
+Проект состоит из серверной части на .NET, фронтенда на React и базы данных PostgreSQL.  
 
-# Используем базовый образ для .NET
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
-WORKDIR /app
-EXPOSE 5000
+### Требования
 
-# Сборка приложения
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
-COPY . .
-RUN dotnet restore
-RUN dotnet publish -c Release -o /app/publish
+- Docker  
+- Docker Compose  
 
-# Финальный образ
-FROM base AS final
-WORKDIR /app
-COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "YourBackendProject.dll"]
+### Инструкции
 
-	Docker для клиентской части:
-
-# Используем базовый образ для Node.js
-FROM node:16-alpine AS build
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-
-# Используем nginx для раздачи файлов
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-
-	Docker-compose файл:
+1. docker-compose up --build
 
 version: '3.8'
 
@@ -197,5 +268,3 @@ services:
 
 volumes:
   postgres_data:
-
-	2 Запустите проект с помощью docker-compose up –build
