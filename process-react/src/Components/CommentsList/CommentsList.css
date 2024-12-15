@@ -1,0 +1,87 @@
+.mainListBlock{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+.listItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;
+    width: 1000px;
+    margin: 10px;
+    border: 1px solid rgb(252, 205, 118);
+    background-color: black;
+}
+.icon{
+    height: 90px;
+}
+.userInfo {
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    white-space: pre;
+    height: 100%;
+  }
+  
+.userViewInfo{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+}
+
+.userInfo {
+    flex: 1;
+    max-width: 150px; /* Максимальная ширина блока с именем пользователя */
+    word-wrap: break-word; /* Переносит слова, если они слишком длинные */
+    overflow: hidden; /* Скрывает лишний текст */
+    text-overflow: ellipsis; /* Добавляет многоточие для длинного текста */
+    white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+.commentInfo {
+    flex: 3;
+    max-width: 100%; /* Максимальная ширина блока с комментарием */
+    max-height: 80px; /* Ограничение высоты блока с комментарием */
+    overflow-y: auto; /* Включает вертикальный скроллинг для длинных комментариев */
+    overflow-x: hidden; /* Предотвращает горизонтальный скроллинг */
+    word-wrap: break-word; /* Разбивает длинные слова */
+    white-space: normal; /* Позволяет тексту переноситься */
+    padding-right: 5px; /* Отступ для скроллбара */
+}
+
+/* Стили для скроллбара */
+.commentInfo::-webkit-scrollbar {
+    width: 8px; /* Ширина вертикального скроллбара */
+}
+
+.commentInfo::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Фон трека (область скроллбара) */
+    border-radius: 10px; /* Закругление трека */
+}
+
+.commentInfo::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, orange, black); /* Цвет и градиент полоски */
+    border-radius: 10px; /* Закругление полоски */
+}
+
+.commentInfo::-webkit-scrollbar-thumb:hover {
+    background: black; /* Цвет полоски при наведении */
+}
+
+.textOfComment{
+    color: rgb(255, 166, 0);
+    font-size: 25px;
+    font-family: Montserrat Alternates;
+}
+
+.commentInfo{
+    margin-left: 50px;
+}

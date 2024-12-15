@@ -1,0 +1,149 @@
+.infoComponentContainer {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.processSelector {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #161515;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+}
+
+.blockOfCompanyInfo {
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    gap: 20px;
+    padding: 20px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.imageProcessBlock {
+    width: 700px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.processInfoBlock {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 10%;
+    gap: 10px;
+}
+
+.processName {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9800;
+    margin: 0;
+}
+
+.processStatus {
+    font-size: 18px;
+    color: #fff;
+    margin: 0;
+}
+
+.processPhotoBlockInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ccc; 
+}
+
+.processPhoto {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.subButton
+{
+    font-family: Montserrat Alternates;
+    padding: 10px 20px;
+    background-color: #f82553;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(175, 103, 103);
+    border-radius: 25px;
+}
+.subButton:hover
+{
+    background-color: #75a4d3;
+    color: #fff;
+}
+
+modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+  
+  .page-content.blocked {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+  .modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content
+  {
+    width: 700px;
+    height: 325px;
+    background-color: #ffffff;
+    border: 5px solid;
+    border-color: #5600f7;  
+    text-align: center;
+
+    }
+  .closeHeading{
+    color: #5600f7;
+    font-family: Montserrat Alternates;
+  }
+  .closeText{
+    margin-bottom: 10px;
+    font-family: Montserrat Alternates;
+    color: #5600f7;
+  }
+  .closeButton{
+    margin-right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #5600f7;
+    font-family: Montserrat Alternates;
+    border: 0px;
+    color: #fff;
+  }
+  .closeButton:hover {
+    color: #5600f7;
+    background-color: rgb(92, 125, 153);
+  }

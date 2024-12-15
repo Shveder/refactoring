@@ -1,0 +1,39 @@
+.userButton{
+    width: 33%;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.buttonsBlockAdmin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.logoAdmin a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.headerAdmin {
+    background-color: #96bfee;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0px 10px;
+}
+.rightBlockAdmin
+{
+    display: flex;
+    align-items: center;
+}
+.profileIconAdmin{
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 50px;
+    cursor: pointer;
+}

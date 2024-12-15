@@ -1,0 +1,30 @@
+.process-table-admin {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.processBlockAdmin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.process-table-admin th,
+.process-table-admin td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+.process-table-admin th {
+  background: #f5f5f5;
+  text-align: left;
+}
+
+.process-table-admin tr {
+  height: 50px;
+}
+
+.manHeading {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

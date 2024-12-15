@@ -1,0 +1,77 @@
+.addCompanyBlock {
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+    top: 50px;
+    width: 80%;
+    height: 719px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uploadCompanyButton {
+    font-family: Montserrat Alternates;
+    padding: 10px 20px;
+    background-color: #f82553;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(175, 103, 103);
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.uploadCompanyButton:hover {
+    background-color: #59a7f0;
+}
+
+.companyBlockHeading {
+    color: rgb(93, 182, 255);
+    margin-bottom: 15px;
+}
+
+.addCompanyInput {
+    background-color: #fa3581;
+    color: #fff;
+    border: 1px solid #fa3581;
+    border-radius: 15px;
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+.addCompanyInput::placeholder {
+    color: #fff;
+}
+
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.companyBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.company-table th,
+.company-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+.company-table th {
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.company-table tr {
+    height: 50px;
+}
+
+.manHeading {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

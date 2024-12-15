@@ -1,0 +1,29 @@
+.iconMenuAdmin{
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    top :55px;
+    right: 25px;
+    z-index: 9999;
+}
+.linkProfileButtonAdmin{
+    width: 110px;
+    height: 47px;
+    background-color: #ff8d8d;
+    border: 2px solid;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.butTextAdmin{
+    vertical-align: middle;
+    font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 5px
+}
+.linkProfileButtonAdmin:hover{
+    background-color: #90c9f1;
+}
+.exitIconAdmin{
+    height: 20px;
+    vertical-align: middle;
+}

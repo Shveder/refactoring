@@ -1,0 +1,45 @@
+.addProcessBlock {
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+    top: 50px;
+    width: 80%;
+    height: 719px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uploadProcessButton {
+    font-family: Montserrat Alternates;
+    padding: 10px 20px;
+    background-color: #f82553;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(175, 103, 103);
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.uploadProcessButton:hover {
+    background-color: #59a7f0;
+}
+
+.processBlockHeading {
+    color: rgb(93, 182, 255);
+    margin-bottom: 15px;
+}
+
+.addProcessInput {
+    background-color: #fa3581;
+    color: #fff;
+    border: 1px solid #fa3581;
+    border-radius: 15px;
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+.addProcessInput::placeholder {
+    color: #fff;
+}

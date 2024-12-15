@@ -1,0 +1,58 @@
+.companyLink
+{
+    font-size: 16px;
+}
+.moreButton
+{
+    font-family: Montserrat Alternates;
+    padding: 10px 20px;
+    background-color: #f82553;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(175, 103, 103);
+    border-radius: 25px;
+}
+.moreButton:hover
+{
+    background-color: #75a4d3;
+    color: #fff;
+}
+.tableRow {
+    line-height: 50px;
+    text-align: center;
+}
+.table-style{
+    width: 100%;
+}
+.mainBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.businessHeading{ 
+    margin-top: 10px;
+    margin-bottom: 35px;
+    color: rgb(114, 201, 201);
+    font-size: 45px;
+}
+.searchContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.deleteText{
+    width: 35px;
+    cursor: pointer;
+    height: 35px;
+}
+.searchInput{
+    padding: 10px;
+    margin-right: 5px;
+    font-size: 18px;
+}
+.companyHeading{
+  color: rgb(55, 142, 224);
+  margin-bottom: 10px;
+}

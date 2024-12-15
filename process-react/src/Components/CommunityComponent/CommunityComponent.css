@@ -1,0 +1,63 @@
+.upHandlingBlock{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+}
+.addCommentBlock{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addViewButton {
+    font-family: Montserrat Alternates;
+    padding: 10px 20px;
+    background-color: #3abd42;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(175, 103, 103);
+    border-radius: 25px;
+}
+
+.addViewButton:hover {
+    background-color: #75a4d3;
+    color: #fff;
+}
+.modalInput {
+    width: 90%;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    /* Отключаем возможность изменения размера */
+    min-height: 100px;
+}
+.backButton {
+    margin: 10px;
+}
+
+.back {
+    background-color: #d0bbeb;
+    border: none;
+    border-radius: 4px;
+    color: #4fa0da;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 10px 20px;
+}
+
+.back:hover {
+    background-color: #4fa0da;
+    color: #fff;
+}
+.page-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

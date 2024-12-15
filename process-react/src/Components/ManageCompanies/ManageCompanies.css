@@ -1,0 +1,25 @@
+.company-table-admin {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .companyBlockAdmin{
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+  }
+  .company-table-admin th,
+  .company-table-admin td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+  }
+  .company-table-admin th {
+    background: #f5f5f5;
+    text-align: left;
+  }
+  .company-table-admin tr{
+    height: 50px;
+  }
+  .manHeading{
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }

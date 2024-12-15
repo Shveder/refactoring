@@ -1,0 +1,71 @@
+.profileViewHeader {
+    background-color: #161515;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0px 10px;
+}
+
+.profileViewWorkspace {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.processViewNavigation {
+    width: 6%;
+    background-color: #161515;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.processViewComponentBlock {
+    width: 94%;
+    background-color: #5465c2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(/public/images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: initial;
+    background-clip: initial;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.navigateIcon {
+    height: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.navigateIconBlock {
+    margin-top: 20px;
+}
+
+.navigateIconAnalys {
+    height: 80px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.navigateIconBlock {
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.navigateIconBlock.active {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.navigateIconBlock.active img {
+    filter: sepia(100%) hue-rotate(299deg) saturate(17000%);
+}
