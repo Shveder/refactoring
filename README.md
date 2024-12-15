@@ -10,9 +10,9 @@
 - **Диаграмма деятельности**  
   ![Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/detelnos.jpg)
 - **Диаграмма последовательности**  
-  *([Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/posledov.jpg))*
+  *![Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/posledov.jpg)*
 - **Use Case диаграмма**  
-  *([Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/userCase.jpg))*
+  *![Описание изображения](https://github.com/Shveder/refactoring/blob/master/Files/schemas/userCase.jpg)*
 
 ## Пользовательский интерфейс
 
